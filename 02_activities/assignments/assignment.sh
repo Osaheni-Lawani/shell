@@ -29,20 +29,44 @@ unzip -q rawdata.zip
 
 # 1. Create a directory named data
 
+osahenilawani@Osahenis-MacBook-Pro newproject % mkdir data
+
+
 # 2. Move the ./rawdata directory to ./data/raw (eg. move it into ./data and rename it to raw)
 
+osahenilawani@Osahenis-MacBook-Pro newproject % mv ./rawdata ./data/raw 
+osahenilawani@Osahenis-MacBook-Pro newproject % cd ./data/raw
+
 # 3. List the contents of the ./data/raw directory
+
+osahenilawani@Osahenis-MacBook-Pro raw %  ls
 
 # 4. Create the directory ./data/processed, 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
 
+osahenilawani@Osahenis-MacBook-Pro raw % cd ..
+osahenilawani@Osahenis-MacBook-Pro data % mkdir processed
+
+
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
+
+osahenilawani@Osahenis-MacBook-Pro data % mkdir processed/server_logs processed/user_logs processed/event_logs
+osahenilawani@Osahenis-MacBook-Pro data % cp ./raw/*server*.log ./processed/server_logs/
 
 # 6. Repeat the above step for user logs and event logs
 
+osahenilawani@Osahenis-MacBook-Pro data % cp ./raw/*user*.log ./processed/user_logs/
+osahenilawani@Osahenis-MacBook-Pro data % cp ./raw/*event*.log ./processed/event_logs/
+
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
 
+osahenilawani@Osahenis-MacBook-Pro data % rm ./raw/*ipaddr*
+osahenilawani@Osahenis-MacBook-Pro data % rm ./processed/user_logs/*ipaddr* 
+
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
+
+osahenilawani@Osahenis-MacBook-Pro data % touch inventory.txt
+osahenilawani@Osahenis-MacBook-Pro data % ls ./processed/*/* > inventory.txt
 
 
 ###########################################
