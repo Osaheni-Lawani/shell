@@ -36,12 +36,11 @@ unzip -q rawdata.zip
  cd ./data/raw
 
 # 3. List the contents of the ./data/raw directory
+
 ls ./data/raw 
 
 # 4. Create the directory ./data/processed, 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
-cd ..
-mkdir processed
 
 cd ..
 mkdir processed
@@ -53,21 +52,15 @@ mkdir processed
  cp ./raw/*server*.log ./processed/server_logs/
 
 # 6. Repeat the above step for user logs and event logs
-cp ./raw/*user*.log ./processed/user_logs/
-cp ./raw/*event*.log ./processed/event_logs/
 
  cp ./raw/*user*.log ./processed/user_logs/
 cp ./raw/*event*.log ./processed/event_logs/
 
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-rf -rf ./data
 
  rm ./raw/*ipaddr*
  rm ./processed/user_logs/*ipaddr* 
 
- rm ./raw/*ipaddr*
- rm ./processed/user_logs/*ipaddr* 
- 
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
 
  touch inventory.txt
