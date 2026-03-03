@@ -37,12 +37,7 @@ unzip -q rawdata.zip
 
 # 3. List the contents of the ./data/raw directory
 
-<<<<<<< HEAD
-
 ls ./data/raw 
-=======
-ls ./data/raw
->>>>>>> dea1aab2d0c0e0c86e5b903132c910e121ca9e7a
 
 # 4. Create the directory ./data/processed, 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
@@ -75,4 +70,4 @@ rf -rf ./data
 
 ###########################################
 
-echo "Project setup is complete!"
+echo "Project setup is complete!
